@@ -45,5 +45,5 @@ console.log(login("Ipi", "767343"))
 console.log(login("Afifi", "767343"))
 console.log(login("Anep", "999999"))
 
-console.log(register("Penyu","123456","Amir","penyu@gmail.com"))
+register("Penyu","123456","Amir","penyu@gmail.com")
 console.log(login("Penyu","123456"))
