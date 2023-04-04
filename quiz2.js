@@ -4,7 +4,7 @@ let dbUsers = [
         password: "767343",
         name: "Afifi",
         email: "afifiasri007@gmail.com"
-    };
+    },
     {
         username: "Tadak",
         password: "197000",
@@ -23,7 +23,27 @@ function login(reqUsername, reqPassword){
     let matchUser = dbUsers.find(
         user => user.username == reqUsername
     )
-    console.log(matchUser)
+    if(!matchUser) return "User not found!"
+    if(matchUser.password==reqPassword){
+        return matchUser
+    }else{
+        return "invalid password"
+    }
+
+}
+
+function register(reqUsername,reqPassword,reqName,reqEmail){
+    dbUsers.push({
+        username: reqUsername,
+        password: reqPassword,
+        name: reqName,
+        email: reqEmail
+    })
 }
 // try to login
-login("Afifi", "password")
+console.log(login("Ipi", "767343"))
+console.log(login("Afifi", "767343"))
+console.log(login("Anep", "999999"))
+
+console.log(register("Penyu","123456","Amir","penyu@gmail.com"))
+console.log(login("Penyu","123456"))
